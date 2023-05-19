@@ -92,10 +92,6 @@ document.getElementById('delete-modal-close').onclick = function () {
 
 
 
-
-
-
-
 </script>
 
 @endsection
