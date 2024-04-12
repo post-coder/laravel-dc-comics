@@ -21,7 +21,7 @@
             <tr>
                 <td>{{ $comic->title }}</td>
                 <td>{{ $comic->artists }}</td>
-                <td><a href="" class="btn btn-outline-light " >Visualizza</a></td>
+                <td><a href="{{ route('comics.show', $comic->id) }}" class="btn btn-outline-light " >Visualizza</a></td>
             </tr>
             @endforeach
 

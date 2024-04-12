@@ -38,9 +38,14 @@ class ComicController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Comic $comic)
     {
-        //
+        // preleviamo il fumetto in base all'id
+        // $comic = Comic::find( $id);
+
+        // dd($comic);
+
+        return view('comics.show', compact('comic'));
     }
 
     /**
