@@ -7,7 +7,7 @@
 
     @dump($comics)
 
-    <table class="table">
+    <table class="table mb-5">
         <thead>
           <tr>
             <th scope="col">Nome</th>
@@ -26,7 +26,9 @@
             @endforeach
 
         </tbody>
-      </table>
+    </table>
+
+    <a href="{{route('comics.create')}}" class="btn btn-primary">Aggiungi un fumetto</a>
 </div>
 
 @endsection
