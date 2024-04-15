@@ -52,6 +52,8 @@
                   
                 </tbody>
             </table>
+
+            <a href="{{route('comics.edit', $comic->id)}}" class="btn btn-secondary"><i class="fa-solid fa-pencil"></i> Modifica</a>
         </div>
     </div>
         
