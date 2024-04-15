@@ -54,11 +54,12 @@
             </table>
 
             <a href="{{route('comics.edit', $comic->id)}}" class="btn btn-secondary"><i class="fa-solid fa-pencil"></i> Modifica</a>
-            <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
-                @csrf
-                @method('DELETE')
-                <button class="btn btn-danger"><i class="fa-solid fa-trash"></i> Elimina</button>
-            </form>
+
+            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                <i class="fa-solid fa-trash"></i> Elimina
+            </button>
+            
+            
         </div>
     </div>
         
@@ -66,5 +67,26 @@
     
     
 </div>
-
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">Elimina fumetto</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Vuoi eliminare il fumetto {{$comic->title}}?
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+            <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button class="btn btn-danger"> Elimina</button>
+            </form>
+        </div>
+      </div>
+    </div>
+  </div>
 @endsection
