@@ -97,6 +97,7 @@ class ComicController extends Controller
         
         // codice per modificare la riga del database
 
+        $this->validation($request->all());
 
         $comic->title = $request->title;
         $comic->description = $request->description;
