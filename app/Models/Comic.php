@@ -12,4 +12,6 @@ class Comic extends Model
 
     // qui diciamo che il model (la riga del db) può essere cancellata col soft delete
     use SoftDeletes;
+
+    protected $fillable = ['title', 'description', 'thumb', 'price', 'series', 'sale_date', 'type', 'artists', 'writers'];
 }
